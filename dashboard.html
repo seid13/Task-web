@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Xoş gəldiniz!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </div>
+            <div class="nav-menu">
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Çıxış
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="welcome-section">
+                <h1 id="welcomeMessage">Xoş gəldiniz!</h1>
+                <p>Sistəmə uğurla daxil oldunuz</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>İstifadəçilər</h3>
+                        <p class="stat-number">150</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Hesabatlar</h3>
+                        <p class="stat-number">42</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Ayarlar</h3>
+                        <p class="stat-number">12</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Bildirişlər</h3>
+                        <p class="stat-number">5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h2>Son Fəaliyyətlər</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <i class="fas fa-check-circle success"></i>
+                        <span>Sistemə daxil oldunuz</span>
+                        <span class="activity-time">İndi</span>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-user-circle info"></i>
+                        <span>Profil məlumatları yeniləndi</span>
+                        <span class="activity-time">2 saat əvvəl</span>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-file-alt warning"></i>
+                        <span>Yeni hesabat yaradıldı</span>
+                        <span class="activity-time">1 gün əvvəl</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // URL parametrlərindən username al
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        
+        if (username) {
+            document.getElementById('welcomeMessage').textContent = `Xoş gəldiniz, ${username}!`;
+        }
+
+        function logout() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

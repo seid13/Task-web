@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+                        
+            <h2>Xoş gəldiniz!</h2>
+            <p>Hesabınıza daxil olun</p>
+
+            <form onsubmit="return login()">
+                
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="İstifadəçi adı" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Şifrə" required>
+                </div>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox" checked>
+                        <span>Məni xatırla</span>
+                    </label>
+                    <a href="#" class="forgot">Şifrəni unutmusunuz?</a>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span>Daxil ol</span>
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>və ya</span>
+            </div>
+
+            <div class="social-login">
+                <button class="google-btn">
+                    <i class="fab fa-google"></i>
+                    <span>Google ilə daxil ol</span>
+                </button>
+            </div>
+
+            <p class="register">
+                <span>Hesabınız yoxdur?</span>
+                <a href="#">Qeydiyyatdan keçin</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- 🔥 JS BURADA (ən aşağıda) -->
+    <script>
+    function login() {
+        let user = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+
+        if(user === "admin" && pass === "1234") {
+            window.location.href = "dashboard.html";
+        } else {
+            alert("İstifadəçi adı və ya şifrə səhvdir!");
+        }
+
+        return false;
+    }
+    </script>
+
+</body>
+</html>
